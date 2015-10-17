@@ -16,6 +16,7 @@ namespace Car_Accelerate_Brake_App
         {
             InitializeComponent();
         }
+        bool ready = false;
         Car aCar = new Car();
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -59,10 +60,9 @@ namespace Car_Accelerate_Brake_App
             {
                 y = int.Parse(textBoxYear.Text);
                 m = textBoxMake.Text;
-                //aCar.Year = y;
-                //aCar.Make = m;
-                 Car aCar = new Car(y, m);
-                 MessageBox.Show("Car is now ready to drive.");
+                Car aCar = new Car(y, m);
+                ready = true;
+                MessageBox.Show("Car is now ready to drive.");
             }
            
         }
@@ -74,18 +74,31 @@ namespace Car_Accelerate_Brake_App
                 e.Handled = true;
             }
         }
-
+        // Speed up MPH
         private void buttonAcc_Click(object sender, EventArgs e)
         {
-            aCar.Accelerate();
-            labelShowMPH.Text = aCar.Speed.ToString();
-
+            if (ready == true)
+            {
+                aCar.Accelerate();
+                labelShowMPH.Text = aCar.Speed.ToString();
+            }
+            else
+            {
+                MessageBox.Show("You have to start the car first.");
+            }
         }
-
+        // Slow down MPH
         private void buttonBrake_Click(object sender, EventArgs e)
         {
-            aCar.Brake();
-            labelShowMPH.Text = aCar.Speed.ToString();
+            if (ready == true)
+            {
+                aCar.Brake();
+                labelShowMPH.Text = aCar.Speed.ToString();
+            }
+            else
+            {
+                MessageBox.Show("You have to start the car first.");
+            }
         }
     }
 }

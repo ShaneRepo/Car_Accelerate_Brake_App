@@ -149,8 +149,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Car_Accelerate_Brake_App.Properties.Resources.Muscle_Car_14_500x500;
-            this.ClientSize = new System.Drawing.Size(1001, 586);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(805, 566);
             this.Controls.Add(this.labelMake);
             this.Controls.Add(this.labelYear);
             this.Controls.Add(this.textBoxMake);
