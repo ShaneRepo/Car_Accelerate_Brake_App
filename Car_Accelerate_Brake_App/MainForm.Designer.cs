@@ -49,6 +49,7 @@
             this.buttonAcc.TabIndex = 0;
             this.buttonAcc.Text = "Accelerate";
             this.buttonAcc.UseVisualStyleBackColor = true;
+            this.buttonAcc.Click += new System.EventHandler(this.buttonAcc_Click);
             // 
             // buttonBrake
             // 
@@ -58,6 +59,7 @@
             this.buttonBrake.TabIndex = 1;
             this.buttonBrake.Text = "Brake";
             this.buttonBrake.UseVisualStyleBackColor = true;
+            this.buttonBrake.Click += new System.EventHandler(this.buttonBrake_Click);
             // 
             // buttonExit
             // 

@@ -16,7 +16,7 @@ namespace Car_Accelerate_Brake_App
         {
             InitializeComponent();
         }
-
+        Car aCar = new Car();
         private void MainForm_Load(object sender, EventArgs e)
         {
             labelShowMPH.Text = "0";
@@ -24,17 +24,7 @@ namespace Car_Accelerate_Brake_App
         // Exit the app 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            int mph = int.Parse(labelShowMPH.Text);
-            if (mph > 75)
-            {
-                MessageBox.Show("Slow down next time citizen :)");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Drive safe citizen :)");
-                this.Close();
-            }
+            this.Close();
         }
 
         private void buttonHelp_Click(object sender, EventArgs e)
@@ -44,6 +34,7 @@ namespace Car_Accelerate_Brake_App
         // Start the app and initialize the constuctor with user input
         private void buttonStart_Click(object sender, EventArgs e)
         {
+           
             int y;
             string m;
             bool checkY = false;
@@ -68,7 +59,10 @@ namespace Car_Accelerate_Brake_App
             {
                 y = int.Parse(textBoxYear.Text);
                 m = textBoxMake.Text;
-                Car aCar = new Car(y, m);
+                //aCar.Year = y;
+                //aCar.Make = m;
+                 Car aCar = new Car(y, m);
+                 MessageBox.Show("Car is now ready to drive.");
             }
            
         }
@@ -79,6 +73,19 @@ namespace Car_Accelerate_Brake_App
             {
                 e.Handled = true;
             }
+        }
+
+        private void buttonAcc_Click(object sender, EventArgs e)
+        {
+            aCar.Accelerate();
+            labelShowMPH.Text = aCar.Speed.ToString();
+
+        }
+
+        private void buttonBrake_Click(object sender, EventArgs e)
+        {
+            aCar.Brake();
+            labelShowMPH.Text = aCar.Speed.ToString();
         }
     }
 }

@@ -13,6 +13,12 @@ namespace Car_Accelerate_Brake_App
         private string _make;
         private int _speed;
         // Constructor
+        public Car()
+        {
+            _speed = 0;
+            _year = 0;
+            _make = "";
+        }
         public Car(int yr,string mk) 
         {
             _speed = 0;
@@ -40,12 +46,12 @@ namespace Car_Accelerate_Brake_App
         // Accelerate method
         public void Accelerate()
         {
-
+            _speed += 5;
         }
         // Brake method
         public void Brake()
-        {
-
-        }
+        {   
+            _speed -= 5;
+        }       
     }
 }
