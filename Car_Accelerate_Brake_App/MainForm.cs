@@ -32,6 +32,7 @@ namespace Car_Accelerate_Brake_App
             }
             else
             {
+                MessageBox.Show("Drive safe citizen :)");
                 this.Close();
             }
         }
@@ -39,6 +40,45 @@ namespace Car_Accelerate_Brake_App
         private void buttonHelp_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Enter year and make into textbox and then click start. Accelerate to go fast, brake to go slow.");
+        }
+        // Start the app and initialize the constuctor with user input
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            int y;
+            string m;
+            bool checkY = false;
+            bool checkM = false;
+            if (string.IsNullOrWhiteSpace(textBoxYear.Text))
+            {
+                MessageBox.Show("Enter year please.");
+            }
+            else
+            {
+                checkY = true;
+            }
+            if (string.IsNullOrWhiteSpace(textBoxMake.Text))
+            {
+                MessageBox.Show("Enter make please.");
+            }
+            else
+            {
+                checkM = true;
+            }
+            if (checkY == true && checkM == true)
+            {
+                y = int.Parse(textBoxYear.Text);
+                m = textBoxMake.Text;
+                Car aCar = new Car(y, m);
+            }
+           
+        }
+        // Allow only numbers and backspace in textbox = user proof
+        private void textBoxYear_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

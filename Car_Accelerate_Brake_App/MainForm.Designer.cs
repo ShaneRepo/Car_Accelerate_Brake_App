@@ -35,8 +35,8 @@
             this.labelShowMPH = new System.Windows.Forms.Label();
             this.buttonStart = new System.Windows.Forms.Button();
             this.buttonHelp = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxYear = new System.Windows.Forms.TextBox();
+            this.textBoxMake = new System.Windows.Forms.TextBox();
             this.labelYear = new System.Windows.Forms.Label();
             this.labelMake = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -96,6 +96,7 @@
             this.buttonStart.TabIndex = 5;
             this.buttonStart.Text = "Start Car";
             this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
             // 
             // buttonHelp
             // 
@@ -107,19 +108,20 @@
             this.buttonHelp.UseVisualStyleBackColor = true;
             this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
-            // textBox1
+            // textBoxYear
             // 
-            this.textBox1.Location = new System.Drawing.Point(122, 451);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
+            this.textBoxYear.Location = new System.Drawing.Point(122, 451);
+            this.textBoxYear.Name = "textBoxYear";
+            this.textBoxYear.Size = new System.Drawing.Size(100, 20);
+            this.textBoxYear.TabIndex = 7;
+            this.textBoxYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxYear_KeyPress);
             // 
-            // textBox2
+            // textBoxMake
             // 
-            this.textBox2.Location = new System.Drawing.Point(122, 483);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 8;
+            this.textBoxMake.Location = new System.Drawing.Point(122, 483);
+            this.textBoxMake.Name = "textBoxMake";
+            this.textBoxMake.Size = new System.Drawing.Size(100, 20);
+            this.textBoxMake.TabIndex = 8;
             // 
             // labelYear
             // 
@@ -149,8 +151,8 @@
             this.ClientSize = new System.Drawing.Size(1001, 586);
             this.Controls.Add(this.labelMake);
             this.Controls.Add(this.labelYear);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxMake);
+            this.Controls.Add(this.textBoxYear);
             this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.labelShowMPH);
@@ -175,8 +177,8 @@
         private System.Windows.Forms.Label labelShowMPH;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Button buttonHelp;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxYear;
+        private System.Windows.Forms.TextBox textBoxMake;
         private System.Windows.Forms.Label labelYear;
         private System.Windows.Forms.Label labelMake;
     }
