@@ -16,5 +16,10 @@ namespace Car_Accelerate_Brake_App
         {
             InitializeComponent();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            labelShowMPH.Text = "0";
+        }
     }
 }
