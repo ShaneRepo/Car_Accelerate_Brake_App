@@ -37,5 +37,15 @@ namespace Car_Accelerate_Brake_App
             get { return _speed; }
             set { _speed = value; }
         }
+        // Accelerate method
+        public void Accelerate()
+        {
+
+        }
+        // Brake method
+        public void Brake()
+        {
+
+        }
     }
 }
